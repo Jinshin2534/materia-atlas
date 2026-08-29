@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 const title="MATERIA ATLAS｜材料科学の地図";
-const description="金属、セラミックス、高分子、電子材料など、材料科学の全体像をツリーでたどるフィールドガイド。";
+const description="材料科学を6領域・24分野・96トピックへ掘り下げ、126ノードの多層ツリーでたどるフィールドガイド。";
 export async function generateMetadata():Promise<Metadata>{
  const h=await headers(); const host=h.get("x-forwarded-host")??h.get("host")??"localhost:3000"; const protocol=h.get("x-forwarded-proto")??(host.includes("localhost")?"http":"https"); const image=`${protocol}://${host}/og.png`;
  return {title,description,icons:{icon:"/favicon.svg"},openGraph:{title,description,type:"website",images:[{url:image,width:1200,height:630,alt:"MATERIA ATLAS — 材料科学の地図をひらく。"}]},twitter:{card:"summary_large_image",title,description,images:[image]}};
